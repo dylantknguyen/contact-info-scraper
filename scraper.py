@@ -14,8 +14,9 @@ with open('urls.txt') as f:
         scraper  = BeautifulSoup(page.content, 'html.parser')
         body = scraper.body
 
-        name = scraper.find('b').text
-        phone_numbers = list(re.findall(r"((?:\d{3}|\(\d{3}\))?(?:\s|-|\.)?\d{3}(?:\s|-|\.)\d{4})", content))
+        name = scraper.find('h3').text
+        # phone_numbers = list(re.findall(r"((?:\d{3}|\(\d{3}\))?(?:\s|-|\.)?\d{3}(?:\s|-|\.)\d{4})", content))
+        phone_numbers = list(re.findall(r"((?:\d{3}|\(\d{3}\)){1}(?:\s|-|\.)?\d{3}(?:\s|-|\.)\d{4})", content))
         emails = list(re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}", content))
 
         worksheet.cell(row=row_num, column=1, value=name)

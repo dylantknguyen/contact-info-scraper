@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 # page = requests.get("https://msa.maryland.gov/msa/mdmanual/05sen/html/sendist.html")
 
 # house
-page = requests.get("https://msa.maryland.gov/msa/mdmanual/06hse/html/hsedist.html")
+# page = requests.get("https://msa.maryland.gov/msa/mdmanual/06hse/html/hsedist.html")
 
 
 scraper  = BeautifulSoup(page.content, 'html.parser')
